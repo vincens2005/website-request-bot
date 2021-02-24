@@ -15,26 +15,26 @@ const command = args.shift().toLowerCase();
 
 client.on('message', message => {
 
-if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-const args = message.content.slice(prefix.length).trim().split(' ');
-const command = args.shift().toLowerCase();
+    const args = message.content.slice(prefix.length).trim().split(' ');
+    const command = args.shift().toLowerCase();
 
     if (message.content === `${prefix}ping`) {
         message.channel.send('Pong.');
     } else if (command === 'request') {
-    	if (!args.length) {
-    		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-    	}
+        if (!args.length) {
+            return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        } else if (args[0] === 'foo') {
+            return message.channel.send('bar');
+        } else if (args[0] === 'bar') {
+            return message.channel.send('lel');
+        }
 
-		else if (args[0] === 'foo') {
-				return message.channel.send('bar');
-			}
 
 
 
-    
-    	message.channel.send(`Command name: ${command}\nArguments: ${args}`);
+        message.channel.send(`Command name: ${command}\nArguments: ${args}`);
     }
 });
 
