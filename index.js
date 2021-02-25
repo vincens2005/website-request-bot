@@ -25,9 +25,12 @@ client.on('message', message => {
     } else if (command === 'request') {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-        } else if (args[0] === 'foo') {
+        } else if (args[0] === 'website') {
             return message.channel.send('bar');
-        } else if (args[0] === 'bar') {
+         else if (args[0] === 'bot') {
+            return message.channel.send('bar');
+            }
+        } else if (args[1] === 'bar') {
             return message.channel.send('lel');
         }
 
