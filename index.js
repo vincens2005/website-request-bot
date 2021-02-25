@@ -43,6 +43,7 @@ client.on('message', message => {
             current_req.messageid = a.id
             console.log(a.id)
             requests.push(current_req)
+            message.reply(`Your request for a ${current_req.type} has been submitted!\nYou will be pinged when a developer accepts it.`)
         })
         //message.channel.send(`Command name: ${command}\nArguments: ${args}`);
     }
